@@ -1,0 +1,135 @@
+header {
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    user-select: none;
+}
+
+nav {
+    display: flex;
+    background-color: var(--main-color);
+    padding: 10px;
+    justify-content: end;
+    user-select: none;
+    height: 50px;
+}
+
+nav div {
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.nav-button {
+    position: relative;
+    display: flex;            /* Applique Flexbox sur .nav-button */
+    align-items: center;
+}
+
+.nav-button .text {
+    font-size: 150%;
+}
+
+p {
+    margin: 0;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 100%; /* Juste en dessous de .parent */
+    left: 0;
+    background-color: var(--secondary-color);
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 10px;
+    padding-top: 0;
+    z-index: 500;
+}
+
+.user-popup {
+    max-width: 200%;
+    width: 200%;
+    right: 0;
+    left: auto;
+    padding-top: 60px;
+    top: 0;
+    border-radius: 10px;
+}
+
+#user:hover {
+    margin : 0;
+}
+
+.nav-button:hover user {
+    width: 200%;
+}
+
+.popup ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popup li {
+    padding: 5px 20px;
+    margin: 0 -10px;
+    cursor: pointer;
+}
+
+hr {
+    border : 1px solid black;
+    margin: 0;
+}
+
+.popup li:hover {
+    background-color: var(--secondary-color-hover);
+}
+
+.nav-button:hover {
+    background-color: var(--secondary-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: -2px;
+    margin-left: -2px;
+}
+
+.nav-button:hover .text {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.nav-button:hover .popup {
+    display: block;
+}
+
+.profile_picture,
+.logo_picture {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.profile_picture {
+    border: 1px solid var(--main-clair-color);
+    z-index: 501;
+}
+
+.vertical {
+    width: 0;
+    height: 60%;
+    border-left: 1px solid black;
+    align-self: center;
+}
+
+a.no-style {
+    text-decoration: none; 
+    color: inherit;
+}

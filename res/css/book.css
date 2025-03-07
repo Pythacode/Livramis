@@ -1,0 +1,28 @@
+.book {
+    padding: 10px;
+    background-color: var(--forground-color);
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    position: relative;
+}
+
+.couverture {
+    border-radius: 10px;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.title {
+    margin-bottom: 0;
+}
+
+.author {
+    margin: 0;
+}
+
+.info {
+    margin: 5px 0;
+}

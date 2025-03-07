@@ -1,0 +1,14 @@
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin : 15px 25%;
+    background-color: var(--forground-color);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.center h1#title {
+    font-size: 500%;
+    margin-bottom: 0;
+}

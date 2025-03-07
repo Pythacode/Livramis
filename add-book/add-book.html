@@ -1,0 +1,76 @@
+<div class="container">
+    <link rel="stylesheet" href="/res/css/form.css">
+    <h1>Ajout d'un livre - Livramis</h1>
+    <h2>Veuillez remplir les champs ci-dessous</h2>
+
+    <form id="add_book" class="add_book" enctype="multipart/form-data" method="post" action="/add-book/">
+        <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+        <link rel="stylesheet" href="./add-book.css">
+
+        <div class="choice_picture_container" id="image-container">
+            <div class="choice_picture">
+                <div>
+                    <h1>Couverture</h1>
+                    <h3>Clique ici pour ajouter une couverture</h3>
+                    <h3>100ko max</h2>
+                    
+                    <input type="hidden" name="MAX_FILE_SIZE" value="102400" /> 
+                    <input type="file" id="image" name="image" accept="image/jpeg, image/webp, image/gif, image/png" style="display: none;">
+
+                    <p id="image-name">Aucune image sélectionnée</p>
+                </div>
+            </div>
+        </div>
+        <div class="inputs">
+            <p id="error"></p>
+            <label for="title">Titre*</label>
+            <input type="text" name="title" id="title">
+            <label for="author">Auteur*</label>
+            <input list="author-list" type="text" name="author" id="author" autocomplete="off">
+            <datalist id="author-list">
+
+                <?php
+                    
+                    $sql_request = $bdd->prepare("SELECT name FROM `authors`");
+                    $sql_request->execute();
+
+                    $authors = $sql_request->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach($authors as $author) {
+                        ?> <option value="<?php echo $author["name"] ?>"></option> <?php
+                    }
+                ?>
+
+            </datalist>
+
+            <label for="key_word">Mot clé (séparé par un "<strong>;</strong>")</label>
+            <input list="key_word" type="text" name="key_word">
+            <datalist id="key_word">
+                <option value="">
+            </datalist>
+            <label for="categorie">Catégorie*</label>
+            <select id="categorie" name="categorie">
+                <option value="Romans">Roman</option>
+                <option value="BDs">BD</option>
+                <option value="Mangas">Mangas</option>
+                <option value="Livres_scolaires">Livres scolaires</option>
+            </select>
+
+
+            <label for="resume">Résumé</label>
+            
+            <!-- Create the editor container -->
+            <div id="resume">
+            
+            </div>
+            <input type="hidden" name="resume" id="resume-input">
+        <input type="submit" value="Ajouter">
+            
+
+        </div>
+        
+        <script src="./add-book.js"></script>
+    </form>
+
+</div>

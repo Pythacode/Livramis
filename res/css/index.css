@@ -1,0 +1,86 @@
+:root {
+    --main-color : #DA9EF8;
+    --secondary-color: #FAAADB;
+    --secondary-color-hover: #d889ba;
+    --main-clair-color : #FFF6FF;
+    --background-color: #C0B1EA;
+    --forground-color : #B48FFF;
+    --forground-color-transparent : #b48fff00;
+    --forground-color-secondary : #8245FF;
+    --input-color: #C4A7FF;
+    --input-color-hover: #ba9ff2;
+    --error-color : #a30000;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+.button {
+    padding: 10px;
+    background-color: var(--input-color);
+    border-radius: 10px;
+    text-decoration: none; 
+    color: inherit;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition-duration: 500ms;
+}
+
+input {
+    transition-duration: 500ms;
+}
+
+input:hover,
+.button:hover {
+    background-color: var(--input-color-hover);
+}
+
+.no-opened:visited {
+    color: black;
+}
+
+.button-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99998;
+    background-color: #0000007e;
+}
+
+.modal-fenetre {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--forground-color);
+    border-radius: 10px;
+    padding: 15px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading {
+    height: 50px;
+    width: auto;
+    animation: loading 3s infinite;
+    border-radius: 10px;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}

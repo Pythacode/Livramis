@@ -1,0 +1,105 @@
+<header>
+    <link rel="stylesheet" href="/res/css/header.css">
+    <img src="/res/img/logo/line_logo.png" alt="Logo Livrami">
+</header>
+<nav>
+    <div class="logo"><a class="no-style" href="/"><img src="/res/img/logo/square_logo.png" alt="Logo Livrami" class="logo_picture"></a></div>
+    <div>
+        <div class="nav-button">
+            <div class="text">
+                <p>Catégorie</p>
+            </div>
+            <div class="popup">
+                <ul>
+                    <hr>
+                    <a href="/" class="no-style"><li>Toute</li></a>
+                    <hr>
+                    <a href="/?categorie=Romans" class="no-style"><li>Romans</li></a>
+                    <hr>
+                    <a href="/?categorie=BDs" class="no-style"><li>BDs</li></a>
+                    <hr>
+                    <a href="/?categorie=Mangas" class="no-style"><li>Mangas</li></a>
+                    <hr>
+                    <a href="/?categorie=Livres_scolaires" class="no-style"><li>livres scolaire</li></a>
+                </ul>
+            </div>
+        </div>
+        <hr class="vertical">
+        <div class="nav-button">
+            <div class="text">
+                <p>Mes livres</p>
+            </div>
+            <div class="popup">
+                <ul>
+                    <hr>
+                    <li>Livres à prêter</li>
+                    <hr>
+                    <li>Livres à récupérer</li>
+                    <hr>
+                    <li>Livres empruntés</li>
+                    <hr>
+                    <a href="/add-book" class="no-style"><li>Poster un livre</li></a>
+                    <hr>
+                    <li>Ma liste</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="vertical">
+        <div class="nav-button">
+            <div class="text">
+                <p>Emprunts</p>
+            </div>
+            <div class="popup">
+                <ul>
+                    <hr>
+                    <li>Livres empruntés</li>
+                    <hr>
+                    <li>livres à finir rapidement</li>
+                    <hr>
+                    <li>livres à rendre</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="vertical">
+        <div class="nav-button">
+            <div class="text">
+                <p>Liste d'attente</p>
+            </div>
+            <div class="popup">
+                <ul>
+                    <hr>
+                    <li>livres que j'aimerais lire</li>
+                    <hr>
+                    <li>Livres à aller chercher</li>
+                    <hr>
+                    <li>livres bientôt disponibles</li>
+                    <hr>
+                    <li>livres favori</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="vertical">
+        <div id="user" class="nav-button">
+            <img src="/user/default/profile_picture.png" alt="Photo de profil" class="profile_picture">
+            <div class="popup user-popup">
+                Mon compte
+                <ul>
+                    <hr>
+                <?php
+                if (!isset($_SESSION['id'])) {
+                    ?>
+                        <a class="no-style" href="/login"><li>Se connecter</li></a>
+                        <a class="no-style" href="/signin"><li>S'inscrire</li></a>
+                    <?php
+                } else {
+                    ?>
+                        <a class="no-style" href="/profil"><li>Mon profil</li></a>
+                        <a class="no-style" href="/logout"><li>Déconnection</li></a>
+                    <?php
+                }
+                ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
